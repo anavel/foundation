@@ -1,0 +1,21 @@
+{
+    "name": "ablunier/adoadomin",
+    "description": "",
+    "authors": [
+        {
+            "name": "Adrian P. Blunier",
+            "email": "adrian@blunier.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "5.0.*",
+        "almasaeed2010/adminlte": "2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "ANavallaSuiza\\Adoadomin\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
