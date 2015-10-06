@@ -14,7 +14,7 @@
         @if ($modules)
         <ul class="nav navbar-nav">
             @foreach ($modules as $module)
-            <li class="active"><a href="{{ $module->mainRoute() }}">{{ $module->name() }} <span class="sr-only">(current)</span></a></li>
+            <li{!! $module->isActive() ? ' class="active"' : '' !!}><a href="{{ $module->mainRoute() }}">{{ $module->name() }}{!! $module->isActive() ? ' <span class="sr-only">(current)</span>' : '' !!}</a></li>
             @endforeach
         </ul>
         @endif

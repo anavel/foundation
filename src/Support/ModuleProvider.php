@@ -13,4 +13,5 @@ abstract class ModuleProvider extends ServiceProvider
 
     abstract public function sidebarItems();
 
+    abstract public function isActive();
 }

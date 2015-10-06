@@ -61,6 +61,12 @@ class Adoadomin extends Container implements AdoadominContact
 
     public function activeModule()
     {
+        foreach ($this->moduleProviders as $module) {
+            if ($module->isActive()) {
+                return $module;
+            }
+        }
+
         return null;
     }
 }
