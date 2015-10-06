@@ -19,7 +19,7 @@ class Adoadomin extends Container implements AdoadominContact
 
     public function boot()
     {
-        array_walk($this->moduleProviders, function($p) {
+        array_walk($this->moduleProviders, function ($p) {
             $this->bootProvider($p);
         });
     }

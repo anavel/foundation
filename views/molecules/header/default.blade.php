@@ -7,7 +7,7 @@
         @if ($hasSidebar)
         <!-- Sidebar toggle button-->
         <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-            <span class="sr-only">Toggle navigation</span>
+            <span class="sr-only">{{ trans('adoadomin::messages.toogle_navigation') }}</span>
         </a>
         @endif
 
@@ -22,20 +22,24 @@
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-                {{--@if ($user)--}}
+                @if ($user)
                 <li class="dropdown user user-menu">
                     <!-- Menu Toggle Button -->
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <!-- The user image in the navbar-->
-                        <img src="dist/img/user2-160x160.jpg" class="user-image" alt=""/>
+                        @if ($user->getAvatar())
+                        <img src="{{ $user->getAvatar() }}" class="user-image" alt=""/>
+                        @endif
                         <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                        <span class="hidden-xs">Ana Valla Suiza</span>
+                        <span class="hidden-xs">{{ $user->getName() }}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- The user image in the menu -->
                         <li class="user-header">
-                            <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="" />
-                            <p>Ana Valla Suiza</p>
+                            @if ($user->getAvatar())
+                            <img src="{{ $user->getAvatar() }}" class="img-circle" alt="" />
+                            @endif
+                            <p>{{ $user->getName() }}</p>
                         </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">
@@ -43,12 +47,12 @@
                                 <a href="#" class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
-                                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                <a href="#" class="btn btn-default btn-flat">{{ trans('adoadomin::messages.signout') }}</a>
                             </div>
                         </li>
                     </ul>
                 </li>
-                {{--@endif--}}
+                @endif
             </ul>
         </div>
     </nav>

@@ -5,6 +5,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('adoadomin::pages.index');
+        return view(config('adoadomin.dashboard_view'));
     }
 }

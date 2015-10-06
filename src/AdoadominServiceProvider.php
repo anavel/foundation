@@ -25,6 +25,8 @@ class AdoadominServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom(__DIR__.'/../views', 'adoadomin');
 
+        $this->loadTranslationsFrom(__DIR__.'/../lang', 'adoadomin');
+
         $this->publishes([
             __DIR__.'/../config/adoadomin.php' => config_path('adoadomin.php'),
         ], 'config');
