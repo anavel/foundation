@@ -62,6 +62,9 @@ class AdoadominServiceProvider extends ServiceProvider
             }
         );
 
+        // Force register modules
+        $this->app->make('ANavallaSuiza\Adoadomin\Contracts\Adoadomin');
+
         $this->app->register('ANavallaSuiza\Adoadomin\Providers\ViewComposersServiceProvider');
     }
 
