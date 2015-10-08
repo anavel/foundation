@@ -17,16 +17,16 @@ class SidebarComposer
         $activeModule = $this->adoadomin->activeModule();
 
         $hasSidebar = false;
-        $menuItems = [];
+        $sidebarMenu = null;
 
         if (! empty($activeModule)) {
             $hasSidebar = $activeModule->hasSidebar();
-            $menuItems = $activeModule->sidebarItems();
+            $sidebarMenu = $activeModule->sidebarMenu();
         }
 
         $view->with([
             'hasSidebar' => $hasSidebar,
-            'menuItems' => $menuItems
+            'sidebarMenu' => $sidebarMenu
         ]);
     }
 }
