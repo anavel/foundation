@@ -50,7 +50,7 @@ class AdoadominServiceProvider extends ServiceProvider
         $this->app->singleton(
             'ANavallaSuiza\Adoadomin\Contracts\Adoadomin',
             function ($app) {
-                $adoadomin = new Adoadomin($app);
+                $adoadomin = new Adoadomin($app, $this->app['router']);
 
                 foreach (config('adoadomin.modules') as $module) {
                     $adoadomin->register($module);
