@@ -36,6 +36,9 @@ class AdoadominServiceProvider extends ServiceProvider
             __DIR__.'/../public/dist' => public_path('vendor/adoadomin/dist'),
             __DIR__.'/../public/plugins' => public_path('vendor/adoadomin/plugins')
         ], 'assets');
+
+        $adoadomin = $this->app->make('ANavallaSuiza\Adoadomin\Contracts\Adoadomin');
+        $adoadomin->boot();
     }
 
     /**
@@ -55,8 +58,6 @@ class AdoadominServiceProvider extends ServiceProvider
                 foreach (config('adoadomin.modules') as $module) {
                     $adoadomin->register($module);
                 }
-
-                $adoadomin->boot();
 
                 return $adoadomin;
             }
