@@ -25,9 +25,8 @@
         @show
     </head>
 
-    <body class="{{ config('adoadomin.layout_options') }} {{ config('adoadomin.skin') }}">
+    <body class="{{ config('adoadomin.layout_options') }} {{ config('adoadomin.skin') }} @section('body-classes')@show">
         <div class="wrapper">
-
             @section('header')
                 @include('adoadomin::molecules.header.default')
             @show
@@ -53,7 +52,6 @@
             @section('footer')
                 @include('adoadomin::molecules.footer.default')
             @show
-
         </div>
 
         <!-- REQUIRED JS SCRIPTS -->

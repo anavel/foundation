@@ -4,12 +4,10 @@
 
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
-        @if ($hasSidebar)
         <!-- Sidebar toggle button-->
-        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <a href="#" class="sidebar-toggle" {!! $hasSidebar ? 'data-toggle="offcanvas"' : ''!!} role="button">
             <span class="sr-only">{{ trans('adoadomin::messages.toogle_navigation') }}</span>
         </a>
-        @endif
 
         @if ($modules)
         <ul class="nav navbar-nav">
