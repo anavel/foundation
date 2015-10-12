@@ -43,9 +43,13 @@
                 </section>
 
                 <section class="content">
+                    @section('alerts')
+                        @include('adoadomin::atoms.alerts.flash')
+
+                        @include('adoadomin::atoms.alerts.errors')
+                    @show
 
                     @yield('content')
-
                 </section>
             </div>
 
