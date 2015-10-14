@@ -10,7 +10,8 @@
     "require": {
         "php": ">=5.4.0",
         "illuminate/support": "5.0.*",
-        "illuminate/translation": "5.0.*"
+        "illuminate/translation": "5.0.*",
+        "knplabs/knp-menu": "2.1.*"
     },
     "require-dev": {
         "almasaeed2010/adminlte": "2.*"
