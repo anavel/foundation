@@ -25,6 +25,7 @@
         @show
     </head>
 
+    @section('body')
     <body class="{{ config('adoadomin.layout_options') }} {{ config('adoadomin.skin') }} @section('body-classes')@show">
         <div class="wrapper">
             @section('header')
@@ -72,4 +73,5 @@
                 user experience -->
         @show
     </body>
+    @show
 </html>
