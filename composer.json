@@ -1,25 +1,34 @@
 {
-    "name": "anavallasuiza/adoadomin",
-    "description": "",
-    "authors": [
-        {
-            "name": "Adrian P. Blunier",
-            "email": "adrian@blunier.net"
-        }
-    ],
-    "require": {
-        "php": ">=5.5.9",
-        "illuminate/support": "5.1.*",
-        "illuminate/translation": "5.1.*",
-        "knplabs/knp-menu": "2.1.*"
+  "name": "anavallasuiza/adoadomin",
+  "description": "",
+  "keywords": [
+    "laravel",
+    "admin",
+    "admin panel"
+  ],
+  "authors": [
+    {
+      "name": "Adrian P. Blunier",
+      "email": "adrian@anavallasuiza.com"
     },
-    "require-dev": {
-        "almasaeed2010/adminlte": "2.*"
-    },
-    "autoload": {
-        "psr-4": {
-            "ANavallaSuiza\\Adoadomin\\": "src/"
-        }
-    },
-    "minimum-stability": "stable"
+    {
+      "name": "Carlos Morales",
+      "email": "adrian@anavallasuiza.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.9",
+    "illuminate/support": "5.1.*",
+    "illuminate/translation": "5.1.*",
+    "knplabs/knp-menu": "2.1.*"
+  },
+  "require-dev": {
+    "almasaeed2010/adminlte": "2.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "ANavallaSuiza\\Adoadomin\\": "src/"
+    }
+  },
+  "minimum-stability": "stable"
 }
