@@ -1,9 +1,9 @@
-@extends('adoadomin::layouts.master')
+@extends('anavel::layouts.master')
 
 @section('body')
 <body class="hold-transition login-page">
     <div class="login-box">
-        <div class="login-logo">{!! config('adoadomin.site_name') !!}</div>
+        <div class="login-logo">{!! config('anavel.site_name') !!}</div>
 
         <div class="login-box-body">
             <p class="login-box-msg">Sign in to start your session</p>
@@ -40,11 +40,11 @@
     </div>
 
     <!-- jQuery 2.1.4 -->
-    <script src="{{ asset('vendor/adoadomin/plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
+    <script src="{{ asset('vendor/anavel/plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
     <!-- Bootstrap 3.3.5 -->
-    <script src="{{ asset('vendor/adoadomin/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('vendor/anavel/bootstrap/js/bootstrap.min.js') }}"></script>
     <!-- iCheck -->
-    <script src="{{ asset('vendor/adoadomin/plugins/iCheck/icheck.min.js') }}"></script>
+    <script src="{{ asset('vendor/anavel/plugins/iCheck/icheck.min.js') }}"></script>
     <script>
         $(function () {
             $('input').iCheck({

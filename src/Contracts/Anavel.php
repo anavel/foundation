@@ -1,7 +1,7 @@
 <?php
-namespace ANavallaSuiza\Adoadomin\Contracts;
+namespace Anavel\Foundation\Contracts;
 
-interface Adoadomin
+interface Anavel
 {
     public function boot();
 

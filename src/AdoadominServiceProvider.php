@@ -1,10 +1,10 @@
 <?php
-namespace ANavallaSuiza\Adoadomin;
+namespace Anavel\Foundation;
 
 use Illuminate\Support\ServiceProvider;
-use ANavallaSuiza\Adoadomin\Foundation\Adoadomin;
+use Anavel\Foundation\Core\Anavel;
 
-class AdoadominServiceProvider extends ServiceProvider
+class AnavelServiceProvider extends ServiceProvider
 {
 
     /**
@@ -23,22 +23,22 @@ class AdoadominServiceProvider extends ServiceProvider
     {
         include __DIR__.'/Http/routes.php';
 
-        $this->loadViewsFrom(__DIR__.'/../views', 'adoadomin');
+        $this->loadViewsFrom(__DIR__.'/../views', 'anavel');
 
-        $this->loadTranslationsFrom(__DIR__.'/../lang', 'adoadomin');
+        $this->loadTranslationsFrom(__DIR__.'/../lang', 'anavel');
 
         $this->publishes([
-            __DIR__.'/../config/adoadomin.php' => config_path('adoadomin.php'),
+            __DIR__.'/../config/anavel.php' => config_path('anavel.php'),
         ], 'config');
 
         $this->publishes([
-            __DIR__.'/../public/bootstrap' => public_path('vendor/adoadomin/bootstrap'),
-            __DIR__.'/../public/dist' => public_path('vendor/adoadomin/dist'),
-            __DIR__.'/../public/plugins' => public_path('vendor/adoadomin/plugins')
+            __DIR__.'/../public/bootstrap' => public_path('vendor/anavel/bootstrap'),
+            __DIR__.'/../public/dist' => public_path('vendor/anavel/dist'),
+            __DIR__.'/../public/plugins' => public_path('vendor/anavel/plugins')
         ], 'assets');
 
-        $adoadomin = $this->app->make('ANavallaSuiza\Adoadomin\Contracts\Adoadomin');
-        $adoadomin->boot();
+        $anavel = $this->app->make('Anavel\Foundation\Contracts\Anavel');
+        $anavel->boot();
     }
 
     /**
@@ -48,25 +48,25 @@ class AdoadominServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/adoadomin.php', 'adoadomin');
+        $this->mergeConfigFrom(__DIR__.'/../config/anavel.php', 'anavel');
 
         $this->app->singleton(
-            'ANavallaSuiza\Adoadomin\Contracts\Adoadomin',
+            'Anavel\Foundation\Contracts\Anavel',
             function ($app) {
-                $adoadomin = new Adoadomin($app, $this->app['router']);
+                $anavel = new Anavel($app, $this->app['router']);
 
-                foreach (config('adoadomin.modules') as $module) {
-                    $adoadomin->register($module);
+                foreach (config('anavel.modules') as $module) {
+                    $anavel->register($module);
                 }
 
-                return $adoadomin;
+                return $anavel;
             }
         );
 
         // Force register modules
-        $this->app->make('ANavallaSuiza\Adoadomin\Contracts\Adoadomin');
+        $this->app->make('Anavel\Foundation\Contracts\Anavel');
 
-        $this->app->register('ANavallaSuiza\Adoadomin\Providers\ViewComposersServiceProvider');
+        $this->app->register('Anavel\Foundation\Providers\ViewComposersServiceProvider');
     }
 
     /**

@@ -1,15 +1,15 @@
 <?php
-namespace ANavallaSuiza\Adoadomin\Http\Controllers;
+namespace Anavel\Foundation\Http\Controllers;
 
 class DefaultController extends Controller
 {
     public function index()
     {
-        return view(config('adoadomin.dashboard_view'));
+        return view(config('anavel.dashboard_view'));
     }
 
     public function login()
     {
-        return view('adoadomin::pages.login');
+        return view('anavel::pages.login');
     }
 }

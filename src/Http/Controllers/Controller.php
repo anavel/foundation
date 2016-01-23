@@ -1,5 +1,5 @@
 <?php
-namespace ANavallaSuiza\Adoadomin\Http\Controllers;
+namespace Anavel\Foundation\Http\Controllers;
 
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Bus\DispatchesCommands;

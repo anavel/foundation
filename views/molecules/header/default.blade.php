@@ -1,12 +1,12 @@
 <header class="main-header">
     <!-- Logo -->
-    <a href="{{ route('adoadomin.dashboard') }}" class="logo">{!! config('adoadomin.site_name') !!}</a>
+    <a href="{{ route('anavel.dashboard') }}" class="logo">{!! config('anavel.site_name') !!}</a>
 
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
         <a href="#" class="sidebar-toggle" {!! $hasSidebar ? 'data-toggle="offcanvas"' : ''!!} role="button">
-            <span class="sr-only">{{ trans('adoadomin::messages.toogle_navigation') }}</span>
+            <span class="sr-only">{{ trans('anavel::messages.toogle_navigation') }}</span>
         </a>
 
         @if ($modules)
@@ -45,7 +45,7 @@
                                 <a href="#" class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
-                                <a href="#" class="btn btn-default btn-flat">{{ trans('adoadomin::messages.signout') }}</a>
+                                <a href="#" class="btn btn-default btn-flat">{{ trans('anavel::messages.signout') }}</a>
                             </div>
                         </li>
                     </ul>

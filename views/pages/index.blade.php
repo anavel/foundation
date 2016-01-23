@@ -1,4 +1,4 @@
-@extends('adoadomin::layouts.master')
+@extends('anavel::layouts.master')
 
 @section('body-classes')
     sidebar-collapse

@@ -1,5 +1,5 @@
 <?php
-namespace ANavallaSuiza\Adoadomin\Support;
+namespace Anavel\Foundation\Support;
 
 use Illuminate\Support\ServiceProvider;
 

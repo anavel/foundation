@@ -1,5 +1,5 @@
 <?php
-namespace ANavallaSuiza\Adoadomin\Providers;
+namespace Anavel\Foundation\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -22,7 +22,7 @@ class ViewComposersServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->view->composer('adoadomin::molecules.header.default', 'ANavallaSuiza\Adoadomin\View\Composers\HeaderComposer');
-        $this->app->view->composer('adoadomin::molecules.sidebar.default', 'ANavallaSuiza\Adoadomin\View\Composers\SidebarComposer');
+        $this->app->view->composer('anavel::molecules.header.default', 'Anavel\Foundation\View\Composers\HeaderComposer');
+        $this->app->view->composer('anavel::molecules.sidebar.default', 'Anavel\Foundation\View\Composers\SidebarComposer');
     }
 }

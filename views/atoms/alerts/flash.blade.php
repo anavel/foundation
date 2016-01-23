@@ -1,5 +1,5 @@
-@if (Session::has('adoadomin-alert'))
-    @include ('adoadomin::atoms.alerts.default', Session::get('adoadomin-alert'))
+@if (Session::has('anavel-alert'))
+    @include ('anavel::atoms.alerts.default', Session::get('anavel-alert'))
 
-    {{ Session::forget('adoadomin-alert') }}
+    {{ Session::forget('anavel-alert') }}
 @endif

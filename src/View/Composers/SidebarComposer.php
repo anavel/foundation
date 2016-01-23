@@ -1,20 +1,20 @@
 <?php
-namespace ANavallaSuiza\Adoadomin\View\Composers;
+namespace Anavel\Foundation\View\Composers;
 
-use ANavallaSuiza\Adoadomin\Contracts\Adoadomin;
+use Anavel\Foundation\Contracts\Anavel;
 
 class SidebarComposer
 {
-    protected $adoadomin;
+    protected $anavel;
 
-    public function __construct(Adoadomin $adoadomin)
+    public function __construct(Anavel $anavel)
     {
-        $this->adoadomin = $adoadomin;
+        $this->anavel = $anavel;
     }
 
     public function compose($view)
     {
-        $activeModule = $this->adoadomin->activeModule();
+        $activeModule = $this->anavel->activeModule();
 
         $hasSidebar = false;
         $sidebarMenu = null;

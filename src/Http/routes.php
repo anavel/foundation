@@ -2,21 +2,21 @@
 
 Route::group(
     [
-        'prefix'     => config('adoadomin.route_prefix'),
-        'namespace'  => 'ANavallaSuiza\Adoadomin\Http\Controllers'
+        'prefix'     => config('anavel.route_prefix'),
+        'namespace'  => 'Anavel\Foundation\Http\Controllers'
     ],
     function () {
-        Route::get('login', ['as' => 'adoadomin.login', 'uses' => 'DefaultController@login']);
+        Route::get('login', ['as' => 'anavel.login', 'uses' => 'DefaultController@login']);
     }
 );
 
 Route::group(
     [
-        'prefix'     => config('adoadomin.route_prefix'),
-        //'middleware' => config('adoadomin.auth_middleware'),
-        'namespace'  => 'ANavallaSuiza\Adoadomin\Http\Controllers'
+        'prefix'     => config('anavel.route_prefix'),
+        //'middleware' => config('anavel.auth_middleware'),
+        'namespace'  => 'Anavel\Foundation\Http\Controllers'
     ],
     function () {
-        Route::get('/', ['as' => 'adoadomin.dashboard', 'uses' => 'DefaultController@index']);
+        Route::get('/', ['as' => 'anavel.dashboard', 'uses' => 'DefaultController@index']);
     }
 );

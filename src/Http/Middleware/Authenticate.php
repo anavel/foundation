@@ -1,5 +1,5 @@
 <?php
-namespace ANavallaSuiza\Adoadomin\Http\Middleware;
+namespace Anavel\Foundation\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
@@ -38,7 +38,7 @@ class Authenticate
             if ($request->ajax()) {
                 return response('Unauthorized.', 401);
             } else {
-                return redirect()->guest(route('adoadomin.login'));
+                return redirect()->guest(route('anavel.login'));
             }
         }
 

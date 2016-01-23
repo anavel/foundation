@@ -1,10 +1,11 @@
 {
-  "name": "anavallasuiza/adoadomin",
-  "description": "",
+  "name": "anavel/foundation",
+  "description": "Admin panel backbone for Laravel applications",
   "keywords": [
     "laravel",
     "admin",
-    "admin panel"
+    "admin panel",
+    "cms"
   ],
   "authors": [
     {
@@ -27,7 +28,7 @@
   },
   "autoload": {
     "psr-4": {
-      "ANavallaSuiza\\Adoadomin\\": "src/"
+      "Anavel\\Foundation\\": "src/"
     }
   },
   "minimum-stability": "stable"

@@ -1,5 +1,5 @@
 <?php
-namespace ANavallaSuiza\Adoadomin\Contracts;
+namespace Anavel\Foundation\Contracts;
 
 interface Authenticable
 {

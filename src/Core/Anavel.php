@@ -1,13 +1,13 @@
 <?php
-namespace ANavallaSuiza\Adoadomin\Foundation;
+namespace Anavel\Foundation\Core;
 
-use ANavallaSuiza\Adoadomin\Contracts\Adoadomin as AdoadominContact;
+use Anavel\Foundation\Contracts\Anavel as AnavelContact;
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Routing\Registrar as Router;
-use ANavallaSuiza\Adoadomin\Support\ModuleProvider;
+use Anavel\Foundation\Support\ModuleProvider;
 
-class Adoadomin extends Container implements AdoadominContact
+class Anavel extends Container implements AnavelContact
 {
     protected $app;
     protected $router;
@@ -53,7 +53,7 @@ class Adoadomin extends Container implements AdoadominContact
     protected function bootProvider(ModuleProvider $provider)
     {
         if (method_exists($provider, 'routes')) {
-            $this->router->group(['prefix' => config('adoadomin.route_prefix')], function () use ($provider) {
+            $this->router->group(['prefix' => config('anavel.route_prefix')], function () use ($provider) {
                 include $provider->routes();
             });
         }

@@ -1,5 +1,5 @@
 <?php
-namespace ANavallaSuiza\Adoadomin\View\Menu;
+namespace Anavel\Foundation\View\Menu;
 
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\Renderer\RendererInterface;
