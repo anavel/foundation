@@ -6,8 +6,8 @@
 
 @section('content-header')
 <h1>
-    AdoadoMin
-    <small>Admin panel backbone for Laravel applications</small>
+    Anavel
+    <small>CMS for Laravel applications</small>
 </h1>
 @stop
 
@@ -18,5 +18,5 @@
 @stop
 
 @section('content')
-    <p>Welcome to the AdoadoMin dashboard page! This is a default page. You can customize this page with any content you want.</p>
+    <p>Welcome to the Anavel dashboard page! This is a default page. You can customize this page with any content you want.</p>
 @stop
