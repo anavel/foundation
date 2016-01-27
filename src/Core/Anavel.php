@@ -53,9 +53,12 @@ class Anavel extends Container implements AnavelContact
     protected function bootProvider(ModuleProvider $provider)
     {
         if (method_exists($provider, 'routes')) {
-            $this->router->group(['prefix' => config('anavel.route_prefix')], function () use ($provider) {
-                include $provider->routes();
-            });
+            $this->router->group(
+                ['prefix' => config('anavel.route_prefix'), /*'middleware' => 'anavel.auth'*/],
+                function () use ($provider) {
+                    include $provider->routes();
+                }
+            );
         }
 
         if (method_exists($provider, 'boot')) {

@@ -2,6 +2,8 @@
 namespace Anavel\Foundation;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\Foundation\Application;
+use Anavel\Foundation\Http\Middleware\Authenticate;
 use Anavel\Foundation\Core\Anavel;
 
 class AnavelServiceProvider extends ServiceProvider
@@ -15,12 +17,33 @@ class AnavelServiceProvider extends ServiceProvider
     protected $defer = false;
 
     /**
+     *
+     * @var \Illuminate\Routing\Router
+     */
+    protected $router;
+
+    /**
+     * Create a new service provider instance.
+     *
+     * @param  \Illuminate\Contracts\Foundation\Application  $app
+     * @return void
+     */
+    public function __construct(Application $app)
+    {
+        parent::__construct($app);
+
+        $this->router = $this->app->make('Illuminate\Routing\Router');
+    }
+
+    /**
      * Bootstrap the application events.
      *
      * @return void
      */
     public function boot()
     {
+        $this->router->middleware('anavel.auth', Authenticate::class);
+
         include __DIR__.'/Http/routes.php';
 
         $this->loadViewsFrom(__DIR__.'/../views', 'anavel');

@@ -7,9 +7,4 @@ class DefaultController extends Controller
     {
         return view(config('anavel.dashboard_view'));
     }
-
-    public function login()
-    {
-        return view('anavel::pages.login');
-    }
 }

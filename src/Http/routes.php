@@ -6,14 +6,16 @@ Route::group(
         'namespace'  => 'Anavel\Foundation\Http\Controllers'
     ],
     function () {
-        Route::get('login', ['as' => 'anavel.login', 'uses' => 'DefaultController@login']);
+        Route::get('auth/login', ['as' => 'anavel.login', 'uses' => 'AuthController@getLogin']);
+        Route::post('auth/login', ['as' => 'anavel.login.post', 'uses' => 'AuthController@postLogin']);
+        Route::get('auth/logout', ['as' => 'anavel.logout', 'uses' => 'AuthController@getLogout']);
     }
 );
 
 Route::group(
     [
         'prefix'     => config('anavel.route_prefix'),
-        //'middleware' => config('anavel.auth_middleware'),
+        //'middleware' => 'anavel.auth',
         'namespace'  => 'Anavel\Foundation\Http\Controllers'
     ],
     function () {
