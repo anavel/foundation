@@ -2,6 +2,12 @@
 
 @section('body')
 <body class="hold-transition login-page">
+    @section('alerts')
+        @include('anavel::atoms.alerts.flash')
+
+        @include('anavel::atoms.alerts.errors')
+    @show
+
     <div class="login-box">
         <div class="login-logo">{!! config('anavel.site_name') !!}</div>
 

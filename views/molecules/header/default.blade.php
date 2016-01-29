@@ -45,7 +45,7 @@
                                 <a href="#" class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
-                                <a href="#" class="btn btn-default btn-flat">{{ trans('anavel::messages.signout') }}</a>
+                                <a href="{{ route('anavel.logout') }}" class="btn btn-default btn-flat">{{ trans('anavel::messages.signout') }}</a>
                             </div>
                         </li>
                     </ul>

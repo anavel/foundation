@@ -54,7 +54,7 @@ class Anavel extends Container implements AnavelContact
     {
         if (method_exists($provider, 'routes')) {
             $this->router->group(
-                ['prefix' => config('anavel.route_prefix'), /*'middleware' => 'anavel.auth'*/],
+                ['prefix' => config('anavel.route_prefix'), 'middleware' => 'anavel.auth'],
                 function () use ($provider) {
                     include $provider->routes();
                 }

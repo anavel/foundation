@@ -15,7 +15,7 @@ Route::group(
 Route::group(
     [
         'prefix'     => config('anavel.route_prefix'),
-        //'middleware' => 'anavel.auth',
+        'middleware' => 'anavel.auth',
         'namespace'  => 'Anavel\Foundation\Http\Controllers'
     ],
     function () {

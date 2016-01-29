@@ -1,55 +1,85 @@
 <?php
 namespace Anavel\Foundation\Http\Controllers;
 
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
+    use AuthenticatesUsers, ThrottlesLogins;
+
     /**
      * The Guard implementation.
      *
      * @var Guard
      */
-    protected $auth;
+    protected $guard;
+
+    /**
+     * The username form input.
+     *
+     * @var string
+     */
+    protected $username = 'email';
+
+    /**
+     * Path to the login route.
+     *
+     * @return string
+     */
+    protected $loginPath;
+
+    /**
+     * Redirect after login route
+     *
+     * @var string
+     */
+    protected $redirectPath;
+
+    /**
+     * Redirect after logout route
+     *
+     * @var string
+     */
+    protected $redirectAfterLogout;
+
+    /**
+     * Maximum number of login attempts for delaying further attempts.
+     *
+     * @var int
+     */
+    protected $maxLoginAttempts = 5;
+
+    /**
+     * Number of seconds to delay further login attempts.
+     *
+     * @var int
+     */
+    protected $lockoutTime = 60;
 
     /**
      *
-     * @param  Guard  $auth
+     * @param  Guard  $guard
      * @return void
      */
-    public function __construct(Guard $auth)
+    public function __construct(Guard $guard)
     {
-        $this->auth = $auth;
+        $this->guard = $guard;
+
+        $this->loginPath = route('anavel.login');
+        $this->redirectPath = route('anavel.dashboard');
+        $this->redirectAfterLogout = route('anavel.login');
     }
 
+    /**
+     * Show the application login form.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function getLogin()
     {
         return view('anavel::pages.login');
-    }
-
-    public function postLogin(Request $request)
-    {
-        $this->validate($request, [
-            'email' => 'required',
-            'password' => 'required'
-        ]);
-
-        if ($this->auth->attempt(['email' => $request->get('email'), 'password' => $request->get('password')], $request->has('remember'))) {
-            return redirect()->intended(route('anavel.dashboard'));
-        }
-
-        return redirect(route('anavel.login'))
-            ->withInput($request->only('email', 'remember'))
-            ->withErrors([
-                'email' => trans('anavel::messages.login_error_message'),
-            ]);
-    }
-
-    public function getLogout()
-    {
-        $this->auth->logout();
-
-        return redirect()->guest(route('anavel.login'));
     }
 }
