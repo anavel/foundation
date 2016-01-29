@@ -1,8 +1,10 @@
 <?php
 namespace Anavel\Foundation\Http\Middleware;
 
-use Closure;
 use Illuminate\Contracts\Auth\Guard;
+use Anavel\Foundation\Contracts\Authenticable;
+use Closure;
+use Exception;
 
 class Authenticate
 {
@@ -40,6 +42,18 @@ class Authenticate
             } else {
                 return redirect()->guest(route('anavel.login'));
             }
+        }
+
+        if (! $this->auth->user() instanceof Authenticable) {
+            throw new Exception('The user model must implement the ' . Authenticable::class . ' contract.');
+        }
+
+        if (! $this->auth->user()->isAnavelAuthorized()) {
+            return redirect()
+                ->guest(route('anavel.login'))
+                ->withErrors([
+                    'user' => trans('anavel::messages.login_authorization_missing')
+                ]);
         }
 
         return $next($request);
