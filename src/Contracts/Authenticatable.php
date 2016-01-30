@@ -1,7 +1,7 @@
 <?php
 namespace Anavel\Foundation\Contracts;
 
-interface Authenticable
+interface Authenticatable
 {
     /**
      * @return string

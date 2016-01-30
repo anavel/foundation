@@ -2,7 +2,7 @@
 namespace Anavel\Foundation\Http\Middleware;
 
 use Illuminate\Contracts\Auth\Guard;
-use Anavel\Foundation\Contracts\Authenticable;
+use Anavel\Foundation\Contracts\Authenticatable;
 use Closure;
 use Exception;
 
@@ -44,8 +44,8 @@ class Authenticate
             }
         }
 
-        if (! $this->auth->user() instanceof Authenticable) {
-            throw new Exception('The user model must implement the ' . Authenticable::class . ' contract.');
+        if (! $this->auth->user() instanceof Authenticatable) {
+            throw new Exception('The user model must implement the ' . Authenticatable::class . ' contract.');
         }
 
         if (! $this->auth->user()->isAnavelAuthorized()) {
