@@ -21,6 +21,12 @@ Add the package to your composer.json:
   },
 ```
 
+Add the service provider in app.php:
+
+```
+    Anavel\Foundation\AnavelServiceProvider::class,
+```
+
 Publish the package's assets:
 
 ```
