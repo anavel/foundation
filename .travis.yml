@@ -7,6 +7,11 @@ php:
 
 before_script:
   - travis_retry composer self-update
-  - travis_retry composer install --prefer-source --no-interaction --dev
+  - travis_retry composer install --prefer-source --no-interaction
 
-script: phpunit
+script: phpunit --coverage-text
+
+notifications:
+  email:
+    - "adrian@anavallasuiza.com"
+    - "carlos@anavallasuiza.com"
