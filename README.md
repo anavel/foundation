@@ -13,7 +13,30 @@ Anavel foundation is the backbone for an admin panel for Laravel applications. I
 
 ## Installation
 
+Add the package to your composer.json:
+
+```
+"require": {
+    "anavel/foundation": "dev-master",
+  },
+```
+
+Add the service provider in app.php:
+
+```
+    Anavel\Foundation\AnavelServiceProvider::class,
+```
+
+Publish the package's assets:
+
+```
+php artisan vendor:publish
+```
+
+
 ## Configuration
+
+Edit the 'anavel.php' file in your config folder. 
 
 ## Documentation
 
