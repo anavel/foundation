@@ -12,7 +12,13 @@
         @if ($modules)
         <ul class="nav navbar-nav">
             @foreach ($modules as $module)
+                @if(config('anavel.authorized_modules'))
+                    @can('manage-' . slugify($module->name()))
             <li{!! $module->isActive() ? ' class="active"' : '' !!}><a href="{{ $module->mainRoute() }}">{{ $module->name() }}{!! $module->isActive() ? ' <span class="sr-only">(current)</span>' : '' !!}</a></li>
+                    @endcan
+                @else
+                    <li{!! $module->isActive() ? ' class="active"' : '' !!}><a href="{{ $module->mainRoute() }}">{{ $module->name() }}{!! $module->isActive() ? ' <span class="sr-only">(current)</span>' : '' !!}</a></li>
+                @endif
             @endforeach
         </ul>
         @endif

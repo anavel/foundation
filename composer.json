@@ -21,7 +21,8 @@
     "php": ">=5.5.9",
     "illuminate/support": "5.1.*",
     "illuminate/translation": "5.1.*",
-    "knplabs/knp-menu": "2.1.*"
+    "knplabs/knp-menu": "2.1.*",
+    "javiereguiluz/easyslugger": "1.0.*"
   },
   "require-dev": {
     "almasaeed2010/adminlte": "2.*"
