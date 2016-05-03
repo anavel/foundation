@@ -2,8 +2,8 @@
 
 Route::group(
     [
-        'prefix'     => config('anavel.route_prefix'),
-        'namespace'  => 'Anavel\Foundation\Http\Controllers'
+        'prefix'    => config('anavel.route_prefix'),
+        'namespace' => 'Anavel\Foundation\Http\Controllers'
     ],
     function () {
         Route::get('auth/login', ['as' => 'anavel.login', 'uses' => 'AuthController@getLogin']);
@@ -20,5 +20,11 @@ Route::group(
     ],
     function () {
         Route::get('/', ['as' => 'anavel.dashboard', 'uses' => 'DefaultController@index']);
+        Route::get('/profile/{id}', [
+            'as'   => 'anavel.profile.edit',
+            'uses' => function ($id) {
+                return redirect()->route(config('anavel.profile_edit_route'), [config('anavel.profile_model_slug'), $id]);
+            }
+        ]);
     }
 );

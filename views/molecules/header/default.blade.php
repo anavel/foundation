@@ -47,9 +47,11 @@
                         </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">
+                            @if(! empty(config('anavel.profile_edit_route')))
                             <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                <a href="{{ route('anavel.profile.edit', $user->id) }}" class="btn btn-default btn-flat">Profile</a>
                             </div>
+                            @endif
                             <div class="pull-right">
                                 <a href="{{ route('anavel.logout') }}" class="btn btn-default btn-flat">{{ trans('anavel::messages.signout') }}</a>
                             </div>
