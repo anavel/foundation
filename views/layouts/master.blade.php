@@ -26,7 +26,7 @@
     </head>
 
     @section('body')
-    <body class="{{ config('anavel.layout_options') }} {{ config('anavel.skin') }} @section('body-classes')@show">
+    <body class="{{ config('anavel.layout_options') }} {{ config('anavel.skin') }} @section('body-classes')@show" data-ckeditor-file-browser-url="{{ route('anavel.ckeditor.file-browser') }}" data-ckeditor-file-uploader-url="{{ route('anavel.ckeditor.file-uploader') }}">
         <div class="wrapper">
             @section('header')
                 @include('anavel::molecules.header.default')

@@ -20,5 +20,8 @@ Route::group(
     ],
     function () {
         Route::get('/', ['as' => 'anavel.dashboard', 'uses' => 'DefaultController@index']);
+
+        Route::post('/ckeditor/file/uploader', ['as' => 'anavel.ckeditor.file-uploader', 'uses' => 'DefaultController@ckeditorFileUploader']);
+        Route::get('/ckeditor/file/browser', ['as' => 'anavel.ckeditor.file-browser', 'uses' => 'DefaultController@ckeditorFileBrowser']);
     }
 );

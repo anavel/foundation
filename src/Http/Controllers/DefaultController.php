@@ -7,4 +7,14 @@ class DefaultController extends Controller
     {
         return view(config('anavel.dashboard_view'));
     }
+
+    public function ckeditorFileUploader()
+    {
+
+    }
+
+    public function ckeditorFileBrowser()
+    {
+
+    }
 }
