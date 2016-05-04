@@ -14,6 +14,8 @@
         <!-- Theme style -->
         <link href="{{ asset('vendor/anavel/dist/css/AdminLTE.min.css') }}" rel="stylesheet" type="text/css" />
 
+        <link href="{{ asset('vendor/anavel/dist/css/custom.css') }}" rel="stylesheet" type="text/css" />
+
         <link href="{{ asset('vendor/anavel/dist/css/skins/'.config('anavel.skin').'.min.css') }}" rel="stylesheet" type="text/css" />
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -26,7 +28,7 @@
     </head>
 
     @section('body')
-    <body class="{{ config('anavel.layout_options') }} {{ config('anavel.skin') }} @section('body-classes')@show" data-ckeditor-file-browser-url="{{ route('anavel.ckeditor.file-browser') }}" data-ckeditor-file-uploader-url="{{ route('anavel.ckeditor.file-uploader') }}">
+    <body class="{{ config('anavel.layout_options') }} {{ config('anavel.skin') }} @section('body-classes')@show" data-ckeditor-file-browser-url="{{ route('anavel.ckeditor.file-browser') }}" data-ckeditor-file-uploader-url="{{ route('anavel.ckeditor.file-uploader', ['_token' => csrf_token()]) }}">
         <div class="wrapper">
             @section('header')
                 @include('anavel::molecules.header.default')
