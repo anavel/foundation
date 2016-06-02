@@ -1,36 +1,40 @@
 {
-  "name": "anavel/foundation",
-  "description": "Admin panel backbone for Laravel applications",
-  "keywords": [
-    "laravel",
-    "admin",
-    "admin panel",
-    "cms"
-  ],
-  "authors": [
-    {
-      "name": "Adrian P. Blunier",
-      "email": "adrian@anavallasuiza.com"
+    "name": "anavel/foundation",
+    "description": "Admin panel backbone for Laravel applications",
+    "keywords": [
+        "laravel",
+        "admin",
+        "admin panel",
+        "cms"
+    ],
+    "authors": [
+        {
+            "name": "Adrian P. Blunier",
+            "email": "adrian@anavallasuiza.com"
+        },
+        {
+            "name": "Carlos Morales",
+            "email": "carlos@anavallasuiza.com"
+        },
+        {
+            "name": "Eduardo Salguero",
+            "email": "eduardo@anavallasuiza.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/support": "5.1.*",
+        "illuminate/translation": "5.1.*",
+        "knplabs/knp-menu": "2.1.*",
+        "javiereguiluz/easyslugger": "1.0.*"
     },
-    {
-      "name": "Carlos Morales",
-      "email": "carlos@anavallasuiza.com"
-    }
-  ],
-  "require": {
-    "php": ">=5.5.9",
-    "illuminate/support": "5.1.*",
-    "illuminate/translation": "5.1.*",
-    "knplabs/knp-menu": "2.1.*",
-    "javiereguiluz/easyslugger": "1.0.*"
-  },
-  "require-dev": {
-    "almasaeed2010/adminlte": "2.*"
-  },
-  "autoload": {
-    "psr-4": {
-      "Anavel\\Foundation\\": "src/"
-    }
-  },
-  "minimum-stability": "stable"
+    "require-dev": {
+        "almasaeed2010/adminlte": "2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Anavel\\Foundation\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
 }
