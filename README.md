@@ -3,43 +3,14 @@ Anavel foundation is the backbone for an admin panel for Laravel applications. I
 
 > **Note:** This package is in active development and NOT ready for production.
 
-### Features
-* Basic user inteface appareance configuration.
-* Basic templating for creating custom modules.
+## Official Documentation
 
-### Requirements
-* PHP 5.5 or higher.
-* Laravel >= 5.1
+Documentation for Anavel can be found on the [Anavel website](http://anavel.anavallasuiza.com/).
 
-## Installation
+## Contributing
 
-Add the package to your composer.json:
-
-```
-"require": {
-    "anavel/foundation": "dev-master",
-  },
-```
-
-Add the service provider in app.php:
-
-```
-    Anavel\Foundation\AnavelServiceProvider::class,
-```
-
-Publish the package's assets:
-
-```
-php artisan vendor:publish
-```
-
-
-## Configuration
-
-Edit the 'anavel.php' file in your config folder. 
-
-## Documentation
+Thank you for considering contributing to the Anavel Laravel CMS! The contribution guide can be found in the [Anavel documentation](http://anavel.anavallasuiza.com/).
 
 ## License
 
-This software is published under the MIT License
+Anavel is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
