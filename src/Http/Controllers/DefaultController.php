@@ -30,7 +30,7 @@ class DefaultController extends Controller
             );
 
             $url = url(config('anavel.ckeditor_uploads_path')) . DIRECTORY_SEPARATOR . $fileName;
-        } else if (! empty($request->file('upload')) && ! $request->file('upload')->isValid()) {
+        } elseif (! empty($request->file('upload')) && ! $request->file('upload')->isValid()) {
             $message = $request->file('upload')->getErrorMessage();
         }
 

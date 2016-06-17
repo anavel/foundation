@@ -37,6 +37,5 @@ class CreateUser extends Command
      */
     public function handle()
     {
-
     }
 }
