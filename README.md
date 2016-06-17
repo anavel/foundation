@@ -9,7 +9,7 @@ Documentation for Anavel can be found on the [Anavel website](http://anavel.anav
 
 ## Contributing
 
-Thank you for considering contributing to the Anavel Laravel CMS! The contribution guide can be found in the [Anavel documentation](http://anavel.anavallasuiza.com/).
+Thank you for considering contributing to the Anavel Laravel CMS! The contribution guide can be found in the [Anavel documentation](http://anavel.anavallasuiza.com/docs/master/foundation/contributions).
 
 ## License
 
