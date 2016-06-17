@@ -1,4 +1,4 @@
-# Anavel foundation
+# Anavel foundation [![Build Status](https://travis-ci.org/anavel/foundation.svg?branch=master)](https://travis-ci.org/anavel/foundation) [![StyleCI](https://styleci.io/repos/35343977/shield)](https://styleci.io/repos/35343977)
 Anavel foundation is the backbone for an admin panel for Laravel applications. It aims to be minimalist and modular, and as a consecuence, as flexible as possible.
 
 > **Note:** This package is in active development and NOT ready for production.
