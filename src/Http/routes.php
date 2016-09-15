@@ -27,8 +27,5 @@ Route::group(
                 return redirect()->route(config('anavel.profile_edit_route'), [config('anavel.profile_model_slug'), $id]);
             }
         ]);
-
-        Route::post('/ckeditor/file/uploader', ['as' => 'anavel.ckeditor.file-uploader', 'uses' => 'DefaultController@ckeditorFileUploader']);
-        Route::get('/ckeditor/file/browser', ['as' => 'anavel.ckeditor.file-browser', 'uses' => 'DefaultController@ckeditorFileBrowser']);
     }
 );

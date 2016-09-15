@@ -10,4 +10,6 @@ interface Anavel
     public function modules();
 
     public function activeModule();
+
+    public function hasModule($moduleProvider);
 }

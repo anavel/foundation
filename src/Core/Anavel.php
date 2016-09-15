@@ -81,4 +81,17 @@ class Anavel extends Container implements AnavelContact
 
         return null;
     }
+
+    public function hasModule($moduleProvider)
+    {
+        $hasModule = false;
+
+        foreach ($this->moduleProviders as $module) {
+            if ($module instanceof $moduleProvider) {
+                $hasModule = true;
+            }
+        }
+
+        return $hasModule;
+    }
 }
