@@ -1,10 +1,10 @@
 <?php
+
 namespace Anavel\Foundation\Http\Controllers;
 
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
@@ -32,14 +32,14 @@ class AuthController extends Controller
     protected $loginPath;
 
     /**
-     * Redirect after login route
+     * Redirect after login route.
      *
      * @var string
      */
     protected $redirectPath;
 
     /**
-     * Redirect after logout route
+     * Redirect after logout route.
      *
      * @var string
      */
@@ -60,8 +60,8 @@ class AuthController extends Controller
     protected $lockoutTime = 60;
 
     /**
+     * @param Guard $guard
      *
-     * @param  Guard  $guard
      * @return void
      */
     public function __construct(Guard $guard)

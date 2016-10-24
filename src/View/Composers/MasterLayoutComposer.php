@@ -1,4 +1,5 @@
 <?php
+
 namespace Anavel\Foundation\View\Composers;
 
 use Anavel\Foundation\Contracts\Anavel;
@@ -29,7 +30,7 @@ class MasterLayoutComposer
         }
 
         $view->with([
-            'ckEditorData' => json_encode($ckEditorData)
+            'ckEditorData' => json_encode($ckEditorData),
         ]);
     }
 }

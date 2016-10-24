@@ -1,7 +1,6 @@
 <?php
-namespace Anavel\Foundation\Http\Controllers;
 
-use Illuminate\Http\Request;
+namespace Anavel\Foundation\Http\Controllers;
 
 class DefaultController extends Controller
 {

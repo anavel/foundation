@@ -1,14 +1,14 @@
 <?php
+
 namespace Anavel\Foundation\Http\Middleware;
 
-use Illuminate\Contracts\Auth\Guard;
 use Anavel\Foundation\Contracts\Authenticatable;
 use Closure;
 use Exception;
+use Illuminate\Contracts\Auth\Guard;
 
 class Authenticate
 {
-
     /**
      * The Guard implementation.
      *
@@ -19,7 +19,8 @@ class Authenticate
     /**
      * Create a new filter instance.
      *
-     * @param  Guard  $auth
+     * @param Guard $auth
+     *
      * @return void
      */
     public function __construct(Guard $auth)
@@ -30,8 +31,9 @@ class Authenticate
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure                 $next
+     *
      * @return mixed
      */
     public function handle($request, Closure $next)
@@ -44,15 +46,15 @@ class Authenticate
             }
         }
 
-        if (! $this->auth->user() instanceof Authenticatable) {
-            throw new Exception('The user model must implement the ' . Authenticatable::class . ' contract.');
+        if (!$this->auth->user() instanceof Authenticatable) {
+            throw new Exception('The user model must implement the '.Authenticatable::class.' contract.');
         }
 
-        if (! $this->auth->user()->isAnavelAuthorized()) {
+        if (!$this->auth->user()->isAnavelAuthorized()) {
             return redirect()
                 ->guest(route('anavel.login'))
                 ->withErrors([
-                    'user' => trans('anavel::messages.login_authorization_missing')
+                    'user' => trans('anavel::messages.login_authorization_missing'),
                 ]);
         }
 

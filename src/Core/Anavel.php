@@ -1,18 +1,19 @@
 <?php
+
 namespace Anavel\Foundation\Core;
 
 use Anavel\Foundation\Contracts\Anavel as AnavelContact;
+use Anavel\Foundation\Support\ModuleProvider;
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Routing\Registrar as Router;
-use Anavel\Foundation\Support\ModuleProvider;
 
 class Anavel extends Container implements AnavelContact
 {
     protected $app;
     protected $router;
 
-    protected $moduleProviders = array();
+    protected $moduleProviders = [];
 
     public function __construct(Application $app, Router $router)
     {
@@ -78,8 +79,6 @@ class Anavel extends Container implements AnavelContact
                 return $module;
             }
         }
-
-        return null;
     }
 
     public function hasModule($moduleProvider)

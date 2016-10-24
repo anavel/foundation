@@ -1,4 +1,5 @@
 <?php
+
 namespace Anavel\Foundation\View\Composers;
 
 use Anavel\Foundation\Contracts\Anavel;
@@ -19,14 +20,14 @@ class SidebarComposer
         $hasSidebar = false;
         $sidebarMenu = null;
 
-        if (! empty($activeModule)) {
+        if (!empty($activeModule)) {
             $hasSidebar = $activeModule->hasSidebar();
             $sidebarMenu = $activeModule->sidebarMenu();
         }
 
         $view->with([
-            'hasSidebar' => $hasSidebar,
-            'sidebarMenu' => $sidebarMenu
+            'hasSidebar'  => $hasSidebar,
+            'sidebarMenu' => $sidebarMenu,
         ]);
     }
 }

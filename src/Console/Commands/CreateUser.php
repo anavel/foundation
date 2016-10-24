@@ -1,4 +1,5 @@
 <?php
+
 namespace Anavel\Foundation\Console\Commands;
 
 use Illuminate\Console\Command;
