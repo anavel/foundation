@@ -1,9 +1,10 @@
 <?php
+
 namespace Anavel\Foundation\View\Menu;
 
 use Knp\Menu\FactoryInterface;
-use Knp\Menu\Renderer\RendererInterface;
 use Knp\Menu\Matcher\MatcherInterface;
+use Knp\Menu\Renderer\RendererInterface;
 
 abstract class SidebarMenuProvider
 {

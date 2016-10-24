@@ -1,4 +1,5 @@
 <?php
+
 namespace Anavel\Foundation\Providers;
 
 use Illuminate\Support\ServiceProvider;

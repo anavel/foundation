@@ -1,4 +1,5 @@
 <?php
+
 namespace Anavel\Foundation\View\Composers;
 
 use Anavel\Foundation\Contracts\Anavel;
@@ -21,14 +22,14 @@ class HeaderComposer
 
         $hasSidebar = false;
 
-        if (! empty($activeModule)) {
+        if (!empty($activeModule)) {
             $hasSidebar = $activeModule->hasSidebar();
         }
 
         $view->with([
             'hasSidebar' => $hasSidebar,
-            'modules' => $this->anavel->modules(),
-            'user' => $user
+            'modules'    => $this->anavel->modules(),
+            'user'       => $user,
         ]);
     }
 }

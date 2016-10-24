@@ -1,4 +1,5 @@
 <?php
+
 namespace Anavel\Foundation\Contracts;
 
 interface Anavel

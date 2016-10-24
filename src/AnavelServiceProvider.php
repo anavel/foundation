@@ -1,14 +1,14 @@
 <?php
+
 namespace Anavel\Foundation;
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Contracts\Foundation\Application;
-use Anavel\Foundation\Http\Middleware\Authenticate;
 use Anavel\Foundation\Core\Anavel;
+use Anavel\Foundation\Http\Middleware\Authenticate;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Support\ServiceProvider;
 
 class AnavelServiceProvider extends ServiceProvider
 {
-
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -17,7 +17,6 @@ class AnavelServiceProvider extends ServiceProvider
     protected $defer = false;
 
     /**
-     *
      * @var \Illuminate\Routing\Router
      */
     protected $router;
@@ -25,7 +24,8 @@ class AnavelServiceProvider extends ServiceProvider
     /**
      * Create a new service provider instance.
      *
-     * @param  \Illuminate\Contracts\Foundation\Application  $app
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     *
      * @return void
      */
     public function __construct(Application $app)
@@ -56,8 +56,8 @@ class AnavelServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__.'/../public/bootstrap' => public_path('vendor/anavel/bootstrap'),
-            __DIR__.'/../public/dist' => public_path('vendor/anavel/dist'),
-            __DIR__.'/../public/plugins' => public_path('vendor/anavel/plugins')
+            __DIR__.'/../public/dist'      => public_path('vendor/anavel/dist'),
+            __DIR__.'/../public/plugins'   => public_path('vendor/anavel/plugins'),
         ], 'assets');
 
         $anavel = $this->app->make('Anavel\Foundation\Contracts\Anavel');
