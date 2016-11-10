@@ -35,6 +35,8 @@ CKEDITOR.editorConfig = function( config ) {
 	// Simplify the dialog windows.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
 
+	config.extraAllowedContent = 'div(*)';
+
 	var customConfig = $('body').data('ckeditor');
 
 	config.removePlugins = customConfig.removePlugins;
