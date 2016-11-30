@@ -37,10 +37,12 @@ CKEDITOR.editorConfig = function( config ) {
 
 	config.extraAllowedContent = 'div(*)';
 
-	var customConfig = $('body').data('ckeditor');
+	var customConfig = window.ckEditorCustomConfig;
 
 	config.removePlugins = customConfig.removePlugins;
 
     config.filebrowserBrowseUrl = customConfig.fileBrowserUrl;
     config.filebrowserUploadUrl = customConfig.fileUploaderUrl;
+
+    config.embed_provider = customConfig.embedProvider;
 };

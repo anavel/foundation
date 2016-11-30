@@ -27,5 +27,10 @@ Route::group(
                 return redirect()->route(config('anavel.profile_edit_route'), [config('anavel.profile_model_slug'), $id]);
             },
         ]);
+
+        Route::get('/ckeditor/embed/provider', [
+            'as' => 'anavel.ckeditor.embed-provider',
+            'uses' => 'CkEditorController@embedProvider'
+        ]);
     }
 );

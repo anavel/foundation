@@ -24,11 +24,15 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
+
+        <script type="text/javascript">
+            var ckEditorCustomConfig = '{!! $ckEditorData !!}';
+        </script>
         @show
     </head>
 
     @section('body')
-    <body class="{{ config('anavel.layout_options') }} {{ config('anavel.skin') }} @section('body-classes')@show" data-ckeditor="{{ $ckEditorData }}">
+    <body class="{{ config('anavel.layout_options') }} {{ config('anavel.skin') }} @section('body-classes')@show">
         <div class="wrapper">
             @section('header')
                 @include('anavel::molecules.header.default')

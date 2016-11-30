@@ -21,6 +21,7 @@ class MasterLayoutComposer
             'removePlugins'   => 'image',
             'fileBrowserUrl'  => '',
             'fileUploaderUrl' => '',
+            'embedProvider'   => route('anavel.ckeditor.embed-provider', ['url' => '{url}', 'callback' => '{callback}'])
         ];
 
         if ($uploadsModuleIsInstalled) {
