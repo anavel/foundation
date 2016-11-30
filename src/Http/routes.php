@@ -29,8 +29,8 @@ Route::group(
         ]);
 
         Route::get('/ckeditor/embed/provider', [
-            'as' => 'anavel.ckeditor.embed-provider',
-            'uses' => 'CkEditorController@embedProvider'
+            'as'   => 'anavel.ckeditor.embed-provider',
+            'uses' => 'CkEditorController@embedProvider',
         ]);
     }
 );
