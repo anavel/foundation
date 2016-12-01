@@ -26,7 +26,7 @@
         <![endif]-->
 
         <script type="text/javascript">
-            var ckEditorCustomConfig = '{!! $ckEditorData !!}';
+            var ckEditorCustomConfig = {!! $ckEditorData !!};
         </script>
         @show
     </head>

@@ -41,8 +41,8 @@ CKEDITOR.editorConfig = function( config ) {
 
 	config.removePlugins = customConfig.removePlugins;
 
-    config.filebrowserBrowseUrl = customConfig.fileBrowserUrl;
-    config.filebrowserUploadUrl = customConfig.fileUploaderUrl;
+    config.filebrowserBrowseUrl = decodeURI(customConfig.fileBrowserUrl);
+    config.filebrowserUploadUrl = decodeURI(customConfig.fileUploaderUrl);
 
-    config.embed_provider = customConfig.embedProvider;
+    config.embed_provider = decodeURI(customConfig.embedProvider);
 };
