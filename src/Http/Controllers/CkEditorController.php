@@ -12,8 +12,8 @@ class CkEditorController extends Controller
         $streamContext = stream_context_create([
             'http' => [
                 'method' => 'GET',
-                'header' => sprintf('Referer: %s\r\n', URL::current())
-            ]
+                'header' => sprintf('Referer: %s\r\n', URL::current()),
+            ],
         ]);
 
         $response = file_get_contents(
